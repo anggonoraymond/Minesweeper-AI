@@ -26,22 +26,32 @@
 #include <map>
 #include <set>
 #include <algorithm>
+#include <queue>
 
 using namespace std;
 
 class MyAI : public Agent
 {
+private:
+    vector<vector<int>> board;
+    int rowDimension;
+    int colDimension;
+    int totalMines;
+    int agentX;
+    int agentY;
+    int coveredTiles;
+    int previousRow;
+    int previousCol;
+    queue<pair<int, int>> nextTiles;
+
 public:
-    MyAI ( int _rowDimension, int _colDimension, int _totalMines, int _agentX, int _agentY );
+    MyAI(int _rowDimension, int _colDimension, int _totalMines, int _agentX, int _agentY);
 
-    Action getAction ( int number ) override;
-
+    Action getAction(int number) override;
 
     // ======================================================================
     // YOUR CODE BEGINS
     // ======================================================================
-
-
 
     // ======================================================================
     // YOUR CODE ENDS
